@@ -4,8 +4,8 @@
         <b-card :title="task.subject" class="mb-2" id="card1">
           <b-card-text>{{ task.description }}</b-card-text>
 
-          <b-button variant="outline-secondary" class="mr-2" @click="edit(index)"> Editar </b-button>
-          <b-button variant="outline-danger" class="mr-2" @click="remove(task, index)"> Excluir </b-button>
+          <b-button variant="warning" class="mr-2" @click="edit(index)"> Editar </b-button>
+          <b-button variant="danger" class="mr-2" @click="remove(task, index)"> Excluir </b-button>
         </b-card>
       </div>
 
@@ -22,9 +22,9 @@
     </div>
     <div class="container mt-2 alinhar" v-else>
       <b-card class="mb-2" id="card1">
-        <b-card-text>Pô, vc ainda não criou nenhuma task....</b-card-text>
-        <b-card-text>Bora criar uma?</b-card-text>
-        <b-button variant="outline-danger" class="mr-2" to="/form">É só clicar aqui!</b-button>
+        <b-card-text>Nenhuma tarefa....</b-card-text>
+        <b-card-text>Criar uma?</b-card-text>
+        <b-button variant="warning" class="mr-2" to="/form">É só clicar aqui!</b-button>
       </b-card>
     </div>
 </template>

@@ -8,8 +8,7 @@
           <b-form-input
             id="subject"
             v-model="formAddTask.subject"
-            type="text"
-          
+            type="text"      
             required
             autocomplete="off"
           ></b-form-input>
@@ -24,13 +23,12 @@
             id="description"
             v-model="formAddTask.description"
             type="text"
-
             required
             autocomplete="off"
           ></b-form-textarea>
         </b-form-group>
 
-        <b-button type="submit" variant="outline-secondary" @click="saveTask"> Salvar </b-button>
+        <b-button type="submit" variant="warning" @click="saveTask"> Salvar </b-button>
       </b-form>
 </template>
 
@@ -66,7 +64,7 @@ export default {
         let tasks = JSON.parse(localStorage.getItem("tasks"));
         tasks[this.$route.params.index] = this.formAddTask;
         localStorage.setItem("tasks", JSON.stringify(tasks));
-        this.showToast("success", "Sucesso!", "Tarefa atualizada com suceso");
+        this.showToast("success", "Sucesso!", "Tarefa atualizada com sucesso!");
         this.$router.push({ name: "list" });
         return;
       }
@@ -74,7 +72,7 @@ export default {
       let tasks = (localStorage.getItem("tasks")) ? JSON.parse(localStorage.getItem("tasks")) : [];
       tasks.push(this.formAddTask);
       localStorage.setItem("tasks", JSON.stringify(tasks));
-      this.showToast("success", "Sucesso!", "Tarefa criada com suceso");
+      this.showToast("success", "Sucesso!", "Tarefa criada com sucesso!");
       this.$router.push({ name: "list" });
     }
   }
@@ -96,7 +94,7 @@ export default {
   #description, #subject{
     background-color: #292929;
     border-radius: 7px;
-    color: rgb(255, 201, 5, 1);
+    color: rgb(255, 255, 255);
     box-shadow: -1px 1px 11px 1px rgba(255, 201, 5, 1);
     -webkit-box-shadow: -1px 1px 11px 1px rgba(255, 201, 5, 1);
     border: none;
